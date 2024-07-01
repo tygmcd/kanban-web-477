@@ -1,0 +1,128 @@
+/* Main stylesheet */
+/* Used for styles that need to be applied to entire website */
+
+/* Gets rid of default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Sets default bg color as black */
+body {
+    background-color: black;
+}
+
+/* Gets rid of blue border around input box and hyperlinks when clicked */
+input:focus, a:focus, textarea:focus {
+    outline: none;
+}
+
+/* Makes all links white by default */
+.link {
+    color: #EEE;
+}
+
+/* General wrapper class for all pages */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/static/main/images/bg-1.jpg');
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Base button styling */
+.btn {
+    transition: 0.2s;
+    width: 65%;
+    height: 3rem;
+    background-color: #EEE;
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+}
+
+/* Logout button */
+.btn.logout {
+    background-color: #EEE;
+}
+
+/* Base button hover effects */
+.btn:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+/* Base input field styling */
+.field {
+    background-color: transparent;
+    height: 2.5rem;
+    color: #EEE;
+    border: none;
+    border-bottom: 0.1rem solid #D3D3D3;
+    font-size: 1rem;
+}
+
+/* Base textarea styling */
+.textarea {
+    background-color: transparent;
+    border-color: #EEE;
+    color: #EEE;
+    font-size: 1rem;
+    resize: none;
+}
+
+/* Frosted glass wrapper styling */
+.frost-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 50%;
+    height: 40vh;
+    -webkit-backdrop-filter: blur(0.5rem); 
+    backdrop-filter: blur(0.5rem);
+    box-shadow: 0 0 1.5rem #000;
+    border-radius: 1rem;
+    color: #EEE;
+}
+
+/* Used for login and signup pages at bottom of screen */
+.reminder {
+    color: #EEE;
+    font-size: 1rem;
+}
+
+/* Icon class, primarily for chat icon */
+.icon {
+    width: 2rem;
+    transition: 0.3s
+}
+
+/* Hover effects for icon class */
+.icon:hover {
+    cursor: pointer;
+    opacity: 60%
+}
+
+/* Removes blue background from chrome autofill */
+/* From: https://stackoverflow.com/questions/55131944/how-to-remove-blue-background-on-chrome-autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(20,20,24) inset !important;
+  -webkit-text-fill-color: #EEE;
+}

@@ -1,0 +1,60 @@
+{% extends 'shared/base.html' %}
+
+<!-- BOARDS PAGE -->
+
+<!-- STYLESHEETS -->
+{% block stylesheets %}  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='board/css/board.css') }}" />          
+{% endblock %}
+
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='board/js/boardupdate.js') }}"></script>
+{% endblock %}
+
+<!-- MAIN -->
+{% block maincontent %}
+    <div class="wrapper b">
+        <div class="frost-block b">
+            <div class="board-title">{{ name }}</div>
+            <div class="icons">
+                <button class="icon-btn" id="c-toggle"><img class="icon" src="{{ url_for('static', filename='board/images/chat.png') }}"  alt="chat-icon" loading="lazy"></button> 
+            </div>
+        </div>
+        <div class="main-content-wrapper" id="main-c-id">
+            <div class="lists-container" id="list-c-id">
+                {% for list in lists %}
+                    <div class="list-block" id="list-{{ list['list_id'] }}">
+                        <div class="list-top">
+                            <p class="list-title">{{ list['name'] }}</p>
+                            <button class="add-btn" onclick='addCard("{{ list }}")'>+</button>
+                        </div>
+                        {% for card in cards %}
+                            {% if list['list_id'] == card['list_id'] %}
+                                <div class="card" draggable="true" id="card-{{ card['card_id'] }}">
+                                    <textarea readonly class="textarea c" id="edit-{{ card['card_id'] }}" onkeypress='commitCard(event, "{{ card }}")'>{{ card['content'] }}</textarea>
+                                    <div class="buttons">
+                                        <button class="btn ce" id="b-edit-{{ card['card_id'] }}">Edit</button>
+                                        <button class="btn cd" id="b-delete-{{ card['card_id'] }}">Delete</button>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="frost-block chat" id="chat-container">
+                <div class="chat-window" id="chat-window">
+                    <!-- Message content dynamically inserted here -->
+                </div>
+                <input class="field c" id="field-chat" type="text" placeholder="Enter Message Here">
+                <button class="btn chat" id="btn-chat">Send</button>
+            </div>
+        </div>
+        
+
+    </div>
+{% endblock %}

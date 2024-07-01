@@ -1,0 +1,212 @@
+/* Board page stylesheet */
+
+/* Modified wrapper class for entire page */
+.wrapper.b {
+    justify-content: flex-start;
+}
+
+/* Contains "navbar" buttons */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    width: 80%;
+}
+
+/* Container for icons */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem
+}
+
+/* Title of board */
+.board-title {
+    font-size: 2.5rem;
+    padding-left: 0.75rem;
+}
+
+/* Modified frost block for "navbar" */
+.frost-block.b {
+    flex: 0 0 auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 14vh;
+    border-radius: 0;
+    gap: 0
+}
+
+/* Wraps chat and lists into a single flex container */
+.main-content-wrapper {
+    display: flex;
+    width: 90%;
+    gap: 2rem;
+}
+
+/* Container of all lists */
+.lists-container {
+    display: flex;
+    width: 100%;
+    max-height: 80vh;
+    overflow-x: auto;
+}
+
+/* List component */
+.list-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1%;
+    min-width: 32.33333%;
+    vertical-align: top;
+    background-color: #222;
+    color: #EEE;
+    border-radius: 1rem;
+    overflow-y: auto;
+}
+
+/* Contains title of list and add card button */
+.list-top {
+    flex: 0 0 auto;
+    display: flex;
+    width: 80%;
+    height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title of list */
+.list-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Icon button (chat, add list) */
+.icon-btn {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding-top: 0.5rem;
+}
+
+/* Button to add card */
+.add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    border: none;
+}
+
+/* Hover effects for add card button */
+.add-btn:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+/* Cards that go inside lists */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex: 0 0 auto;
+    width: 85%;
+    border-radius: 0.75rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    cursor: move;
+}
+
+/* Input field modfied for chat */
+.field.c {
+    width: 80%;
+    color: white;
+}
+
+/* Modified btn styling for edit and delete card */
+.btn.cd, .btn.ce {
+    height: 1.5rem;
+    font-size: 0.8rem;
+}
+
+/* Modified textarea for card content */
+.textarea.c {
+    width: 75%;
+    height: 40%;
+    padding: 0.5rem;
+    color: grey;
+}
+
+/* Changes delete button to red */
+.btn.cd {
+    color: #EEE;
+    background-color: #FF0000;
+}
+
+/* Modified frost block for chat box */
+.frost-block.chat {
+    display: none;
+    width: 50%;
+    height: 80vh;
+    border-radius: 1rem;
+}
+
+/* Modified btn for sending chat msg */
+.btn.chat {
+    width: 80%;
+}
+
+/* Window used for holding chat messages */
+.chat-window {
+    width: 80%;
+    height: 70%;
+    overflow: auto;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1000px) {
+    /* Wraps chat and lists into a single flex container */
+    .main-content-wrapper {
+        flex-direction: column;
+    }
+
+    /* Container of all lists */
+    .lists-container {
+        justify-content: flex-start;
+    }
+
+    /* Modified frost block for chat box */
+    .frost-block.chat {
+        width: 100%;
+        height: 45vh;
+        margin-bottom: 2rem;
+    }
+
+    /* Window used for holding chat messages */
+    .chat-window {
+        width: 80%;
+        height: 35%;
+        overflow: auto;
+    }
+
+    /* Title of board */
+    .board-title {
+        font-size: 2rem;
+    }
+
+    /* List component */
+    .list-block {
+        min-width: 20rem;
+    }
+
+
+}
+
+

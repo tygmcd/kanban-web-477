@@ -1,0 +1,31 @@
+{% extends 'shared/base.html' %}
+
+<!-- SIGNUP PAGE -->
+
+<!-- STYLESHEETS -->
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup/css/signup.css') }}" />        
+{% endblock %}
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='signup/js/registration.js') }}"></script>
+{% endblock %}
+
+<!-- MAIN -->
+{% block maincontent %}
+    <div class="wrapper">
+        <form class="frost-block su">
+            <div class="signup-h">Sign Up</div>
+            <input class="field up" id="new-fn" type="text" placeholder="First Name"/>
+            <input class="field up" id="new-ln" type="text" placeholder="Last Name" />
+            <input class="field up" id="new-email" type="text" placeholder="Email" />
+            <input class="field up" id="new-pw" type="password" placeholder="Password" />
+            <input class="field up" id="new-pw-c" type="password" placeholder="Confirm Password" />
+            <button class="btn signup" id="subutton">Sign Up</button>
+            <p class="reminder">Already have an account? <a class="link" href="/signin">Sign in instead</a></p>
+            <p class="auth-message"></p>
+        </form>
+    </div>
+{% endblock %}

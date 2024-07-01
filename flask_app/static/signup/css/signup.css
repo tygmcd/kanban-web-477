@@ -1,0 +1,62 @@
+/* Signup page stylesheet */
+
+/* Container that wraps all signup page content */
+.signup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/static/signin/images/bg-1.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Form element for user to signup */
+.frost-block.su {
+    height: 75vh;
+    width: 45%;
+}
+
+/* Heading for signup */
+.signup-h {
+    font-size: 2.5rem;
+}
+
+/* All input boxes associated with signin form */
+.field.up {
+    width: 70%;
+}
+
+/* Signup button */
+.btn.signup {
+    width: 70%;
+}
+
+/* Adds effects for when user hovers over signin button */
+.signup-b:hover {
+    opacity: 70%;
+    cursor: pointer; 
+}
+
+/* Appears if registration failed */
+.auth-message {
+    color: #FF0000;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 900px) {
+    /* Heading for signup */
+    .signup-h {
+        font-size: 2.25rem;
+    }
+
+    /* Form element for user to signup */
+    .frost-block.su{
+        height: 75vh;
+        width: 80%;
+    }
+
+    /* Reminder text at bottom of box */
+    .reminder {
+        font-size: 0.85rem;
+    }
+}

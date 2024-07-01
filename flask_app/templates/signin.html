@@ -1,0 +1,31 @@
+{% extends 'shared/base.html' %}
+
+<!-- SIGNIN PAGE -->
+<!-- DEFAULT ROUTE -->
+
+<!-- STYLESHEETS -->
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signin/css/signin.css') }}" />        
+{% endblock %}
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='signin/js/authenticate.js') }}"></script>
+{% endblock %}
+
+<!-- MAIN -->
+{% block maincontent %}
+    <div class="wrapper">
+        <form class="frost-block si">
+            <div class="signin-h">Sign In</div>
+            <input class="field in" id='user-email' type="text" placeholder="Email"/>
+            <input class="field in" id='user-pw' type="password" placeholder="Password"/>
+            <button class="btn" id="sibutton">Sign in</button>
+            <p class="auth-message"></p>
+            <p class="reminder">Don't have an account? <a class="link" href="/signup">Create one!</a></p>
+        </form>
+    </div>
+
+
+{% endblock %}

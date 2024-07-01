@@ -1,0 +1,41 @@
+/* Signin page stylesheet */
+
+/* Form element for user to signin */
+.frost-block.si{
+    height: 60vh;
+    width: 45%;
+}
+
+/* Header element for signin form */
+.signin-h {
+    font-size: 3.5rem;
+}
+
+/* All input boxes associated with signin form */
+.field.in {
+    width: 65%;
+}
+
+/* Appears if registration failed */
+.auth-message {
+    color: #FF0000;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 900px) {
+    /* Heading for signin */
+    .signin-h {
+        font-size: 2.75rem;
+    }
+
+    /* Form element for user to signup */
+    .frost-block.si{
+        height: 60vh;
+        width: 80%;
+    }
+
+    /* Reminder text at bottom of box */
+    .reminder {
+        font-size: 0.85rem;
+    }
+}
